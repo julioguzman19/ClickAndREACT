@@ -7,7 +7,7 @@ function Title(props) {
          <ul>
              <li>Clicky Away!</li>
              <li>Html to change on click</li>
-             <li>Score: | Top Score: </li>
+             <li>Score: {props.count} | Top Score: </li>
          </ul>
      </nav>
      <div>

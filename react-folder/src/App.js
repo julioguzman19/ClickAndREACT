@@ -4,10 +4,21 @@ import Wrapper from "./components/Wrapper";
 import friends from "./friends.json";
 import Title from "./components/Title";
 
+
+
+
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
-    friends
+    friends,
+    count:0
+  };
+
+  // handleIncrement increases this.state.count by 1
+ count=() => {
+    // We always use the setState method to update a component's state
+    this.setState({ count: this.state.count + 1 });
+    console.log("Count is: "+this.state.count);
   };
 
   removeFriend = id => {
@@ -21,17 +32,15 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Title>Keep on clicking on images that haven't been clicked</Title>
+        <Title count={this.state.count}>Keep on clicking on images that haven't been clicked</Title>
         <Wrapper>
           {this.state.friends.map(friend => (
             <FriendCard
-              removeFriend={this.removeFriend}
+              //removeFriend={this.removeFriend}
               id={friend.id}
               key={friend.id}
-              name={friend.name}
               image={friend.image}
-              occupation={friend.occupation}
-              location={friend.location}
+              count={this.count}
             />
           ))}
         </Wrapper>

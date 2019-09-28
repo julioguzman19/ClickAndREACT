@@ -21,7 +21,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Title>Instructions on gameplay</Title>
+        <Title>Keep on clicking on images that haven't been clicked</Title>
         <Wrapper>
           {this.state.friends.map(friend => (
             <FriendCard

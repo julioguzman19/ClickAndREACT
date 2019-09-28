@@ -21,7 +21,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Title>Friends List</Title>
+        <Title>Instructions on gameplay</Title>
         <Wrapper>
           {this.state.friends.map(friend => (
             <FriendCard

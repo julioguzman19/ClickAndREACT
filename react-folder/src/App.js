@@ -15,7 +15,6 @@ class App extends Component {
   gameOver = () => {
     if (this.state.score > this.state.highscore) {
       this.setState({highscore: this.state.score}, function() {
-        console.log(this.state.highscore);
       });
     }
     this.state.friends.forEach(friend => {
@@ -29,12 +28,11 @@ class App extends Component {
   clickCount = id => {
     this.state.friends.find((o, i) => {
       if (o.id === id) {
-        if(friends[i].count === 0){
+        if(friends[i].count === 0 ||typeof(friends[i].count)==="undefined" ){
           friends[i].count = friends[i].count + 1;
           this.setState({score : this.state.score + 1}, function(){
-            console.log(this.state.score);
           });
-          this.state.friends.sort(() => Math.random() - 0.5)
+          this.state.friends.sort(() => Math.random() - 1)
           return true; 
         } else {
           this.gameOver();
@@ -49,7 +47,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Title score={this.state.score} highscore={this.state.highscore}>Keep on clicking on images that haven't been clicked</Title>
+        <Title score={this.state.score} highscore={this.state.highscore}>Test your memory!</Title>
         <Wrapper>
           {this.state.friends.map(friend => (
             <FriendCard

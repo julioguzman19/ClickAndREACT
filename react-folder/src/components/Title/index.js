@@ -5,8 +5,7 @@ function Title(props) {
   return <div>
      <nav class="navbar">
          <ul>
-             <li>Clicky Away!</li>
-             <li>Html to change on click</li>
+             <li>Click Away!</li>
              <li>Score: {props.score} | High Score:{props.highscore}  </li>
          </ul>
      </nav>

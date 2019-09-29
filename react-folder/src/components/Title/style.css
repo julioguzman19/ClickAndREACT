@@ -1,6 +1,6 @@
 /* Title under nav bar */
 .title {
-    background:black;
+    background:lightgray;
     width: 100%;
     text-align: center;
     font-size: 40px;
@@ -20,6 +20,6 @@
 
   .navbar li{
       display:inline-block;
-      padding:20px;
+      padding-left:250px;
       text-align:center;
   }
